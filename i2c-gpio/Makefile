@@ -8,7 +8,11 @@ AFILES += api-asm.S
 
 # TODO - you will need to edit these two lines!
 DEVICE = stm32l011f3
-OOCD_FILE = target/stm32l0.cfg
+OOCD_INTERFACE = CMSIS-DAP
+OOCD_TARGET = stm32l0
+#currently unused, as standard configuration files are sufficient:
+#OOCD_FILE = ../openocd-stm32l0.cfg
+
 
 
 
