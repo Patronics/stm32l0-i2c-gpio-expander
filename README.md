@@ -1,3 +1,4 @@
+Currently still under construction, the project aims to be:
 A simple and very lightweight project to make a i2 GPIO expander, using libopencm3 and an stm32l011F3 (using less than 2kB of RAM and 8kB of flash!) 
 
 # Instructions
