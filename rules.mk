@@ -86,7 +86,8 @@ TGT_LDFLAGS += $(ARCH_FLAGS)
 TGT_LDFLAGS += -specs=nano.specs
 TGT_LDFLAGS += -Wl,--gc-sections
 # OPTIONAL
-#TGT_LDFLAGS += -Wl,-Map=$(PROJECT).map
+TGT_LDFLAGS += -Wl,-Map=$(PROJECT).map
+
 ifeq ($(V),99)
 TGT_LDFLAGS += -Wl,--print-gc-sections
 endif
@@ -171,6 +172,16 @@ endif
 
 clean:
 	rm -rf $(BUILD_DIR) $(GENERATED_BINS)
+
+size:
+	arm-none-eabi-size $(PROJECT).elf
+	
+map:
+	# See section sizes
+	grep -E "^\s*\.(text|data|bss|rodata)" $(PROJECT).map
+	
+	# Find largest individual objects
+	arm-none-eabi-nm --size-sort --print-size $(PROJECT).elf | tail -20
 
 .PHONY: all clean flash
 -include $(OBJS:.o=.d)

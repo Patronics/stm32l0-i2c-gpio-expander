@@ -1,14 +1,16 @@
-PROJECT = awesomesauce
+PROJECT = i2c-gpio
 BUILD_DIR = bin
 
 SHARED_DIR = ../my-common-code
-CFILES = my-project.c
+CFILES = main.c
 CFILES += api.c
 AFILES += api-asm.S
 
 # TODO - you will need to edit these two lines!
-DEVICE=stm32f407vgt6
-OOCD_FILE = board/stm32f4discovery.cfg
+DEVICE = stm32l011f3
+OOCD_FILE = target/stm32l0.cfg
+
+
 
 # You shouldn't have to edit anything below here.
 VPATH += $(SHARED_DIR)
@@ -18,3 +20,7 @@ OPENCM3_DIR=../libopencm3
 include $(OPENCM3_DIR)/mk/genlink-config.mk
 include ../rules.mk
 include $(OPENCM3_DIR)/mk/genlink-rules.mk
+
+#valid commands:
+#make
+#make clean
