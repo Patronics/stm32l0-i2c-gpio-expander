@@ -1,4 +1,4 @@
-A simple and very lightweight project, using libopencm3.
+A simple and very lightweight project to make a i2 GPIO expander, using libopencm3 and an stm32l011F3 (using less than 2kB of RAM and 8kB of flash!) 
 
 # Instructions
  1. git clone --recurse-submodules https://github.com/Patronics/stm32l0-i2c-gpio-expander.git
