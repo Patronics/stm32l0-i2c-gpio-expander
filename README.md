@@ -1,18 +1,12 @@
-Easy "clone and go" repository for a libopencm3 based project.
+A simple and very lightweight project, using libopencm3.
 
 # Instructions
- 1. git clone --recurse-submodules https://github.com/libopencm3/libopencm3-template.git your-project
- 2. cd your-project
+ 1. git clone --recurse-submodules https://github.com/Patronics/stm32l0-i2c-gpio-expander.git
+ 2. cd stm32l0-i2c-gpio-expander
  3. make -C libopencm3 # (Only needed once)
- 4. make -C my-project
+ 4. make -C i2c-gpio
 
 If you have an older git, or got ahead of yourself and skipped the ```--recurse-submodules```
 you can fix things by running ```git submodule update --init``` (This is only needed once)
 
-# Directories
-* my-project contains your application
-* my-common-code contains something shared.
-
-# As a template
-You should replace this with your _own_ README if you are using this
-as a template.
+run `make -c i2c-gpio flash` to upload to the board, it's configured by default to use a CMSIS-DAP programmer, such as my [PicoProbe PCB](https://github.com/Patronics/PicoProbePCB).
