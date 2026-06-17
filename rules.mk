@@ -170,6 +170,13 @@ else
 		$(NULL)
 endif
 
+openocd:
+	$(Q)$(OOCD) -f interface/$(OOCD_INTERFACE).cfg \
+	-f target/$(OOCD_TARGET).cfg
+
+gdb:
+	$(Q)arm-none-eabi-gdb $(PROJECT).elf
+
 clean:
 	rm -rf $(BUILD_DIR) $(GENERATED_BINS)
 
